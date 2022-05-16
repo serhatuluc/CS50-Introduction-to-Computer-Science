@@ -1,0 +1,88 @@
+<!-- By the help of skyfall001(github user) -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            function multiopt(event)
+            {
+                if (event.srcElement.innerHTML == "6 people per 1 sheep"){
+                    event.srcElement.style.backgroundColor = "green";
+                    document.getElementById("name2").innerHTML = "Correct";
+                }
+
+                if (event.srcElement.innerHTML == "3 people per 1 sheep"){
+                    event.srcElement.style.backgroundColor = "red";
+                    document.getElementById("name2").innerHTML = "Incorrect";
+                }
+
+                if (event.srcElement.innerHTML == "1 person per 1 sheep"){
+                    event.srcElement.style.backgroundColor = "red";
+                    document.getElementById("name2").innerHTML = "Incorrect";
+                }
+
+                if (event.srcElement.innerHTML == "1 person per 3 sheep"){
+                    event.srcElement.style.backgroundColor = "red";
+                    document.getElementById("name2").innerHTML = "Incorrect";
+                }
+
+                if (event.srcElement.innerHTML == "1 person per 6 sheep"){
+                    event.srcElement.style.backgroundColor = "red";
+                }
+
+            }
+
+            function text_based(){
+                if (document.querySelector("#response").value=="Switzerland"){
+                    document.getElementById("name1").innerHTML = "Correct";
+                }
+                else
+                {
+                    document.getElementById("name1").innerHTML = "Incorrect";
+                }
+            }
+
+            function check()
+            {
+                document.querySelector("div.section").addEventListener("click", multiopt);
+                document.querySelector("#check").addEventListener("click", text_based);
+            }
+
+            document.addEventListener("DOMContentLoaded", check);
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>What is approximate ratio of people to sheep in New Zealand?</h3>
+                <!-- TODO: Add multiple choice question here -->
+                <button>6 people per 1 sheep</button>
+                <button>3 people per 1 sheep</button>
+                <button>1 person per 1 sheep</button>
+                <button>1 person per 3 sheep</button>
+                <button>1 person per 6 sheep</button>
+                <p id="name2"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>In which country is it illegal to own only one guinea pig, as a lone guinea pig might get lonely?</h3>
+                <input id="response" type="text">
+                <button id = "check">Check Answer</button>
+                <p id="name1"></p>
+
+            </div>
+        </div>
+    </body>
+</html>

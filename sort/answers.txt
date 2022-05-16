@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: It takes more time for sort1 to sort reversed texts, knowing that buble sort moves the bigger to the end
+
+sort2 uses: Merge Sort
+
+How do you know?: It performs better at all texts
+
+sort3 uses: Selection Sort
+
+How do you know?: It takes more time to sort the sorted files, knowing that it has bigger omega notation for the best case
